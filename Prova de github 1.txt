@@ -1,0 +1,34 @@
+
+class Vehiculo:
+    def __init__(self, marca, model, color, potencia):
+        self.marca = marca
+        self.model = model
+        self.color = color
+        self.potencia = potencia
+
+    def descripcion(self):
+        return f"Marca: {self.marca}, Model: {self.model}, color: {self.color} Potencia: {self.potencia}"
+        
+class Cotxe(Vehiculo):
+    def __init__(self,marca, model, color, potencia, nombre_portes):
+        super().__init__(marca, model, color, potencia) 
+        self.nombre_portes = nombre_portes
+
+    def descripcion(self):
+        return f"{super().descripcion()}, Nombre de portes: {self.nombre_portes}"      
+        
+class Moto(Vehiculo):
+    def __init__(self, marca, model, color, potencia, Graus_elevacio):
+        super().__init__(marca, model, color, potencia)
+        self.tipus = Graus_elevacio
+
+    def descripcion(self):
+        return f"{super().descripcion()}, Tipus: {self.tipus}"
+        
+cotxe = Cotxe("BMV", "Q9","Blau cel", "200 cavalls",4)
+moto = Moto("Harley Davidson","Blau cel", "455", "100 cavalls",45)
+
+print(cotxe.descripcion())
+print(moto.descripcion())
+
+
